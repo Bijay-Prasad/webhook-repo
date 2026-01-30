@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GitHub Events</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Webhook Events</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h2>Latest GitHub Activity</h2>
-    <ul id="events"></ul>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-github"></i> Webhook Dashboard</h1>
+            <p class="subtitle">Real-time monitoring of GitHub repository events</p>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                Live Connection
+            </div>
+        </header>
+
+        <main>
+            <ul id="events-container">
+                <!-- Events will be populated here by JS -->
+                <li class="empty-state">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p style="margin-top: 1rem;">Waiting for events...</p>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <p>Designed with <i class="fas fa-heart" style="color: #f472b6;"></i> for Developers</p>
+        </footer>
+    </div>
+
     <script src="/static/script.js"></script>
 </body>
 </html>
