@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 from flask_cors import CORS
 from routes.webhook_routes import webhook_bp
@@ -14,4 +15,4 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
